@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/web_app_crypto_analyze.iml" filepath="$PROJECT_DIR$/.idea/web_app_crypto_analyze.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/steamlit-webapp.iml" filepath="$PROJECT_DIR$/.idea/steamlit-webapp.iml" />
+>>>>>>> 4dfa1e44abd6373a569acb6be43df533de8c26f8
     </modules>
   </component>
 </project>
