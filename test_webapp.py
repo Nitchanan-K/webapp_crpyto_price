@@ -1,12 +1,9 @@
-
 import streamlit as st
 import quantstats as qs
 import pandas as pd
 import numpy as np
 from bokeh.plotting import figure
 from PIL import Image
-
-# set window wide
 
 # set title
 st.title('Test WebAPP With QuantStats')
