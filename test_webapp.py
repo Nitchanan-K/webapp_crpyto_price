@@ -7,8 +7,6 @@ import streamlit as st
 from bokeh.plotting import figure
 from PIL import Image
 
-# set window wide
-st.set_option('wideMode', True)
 
 # set title
 st.title('Test plot with quant')
