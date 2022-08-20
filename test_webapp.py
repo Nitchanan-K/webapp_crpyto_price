@@ -1,17 +1,15 @@
-import streamlit as st
 
+import streamlit as st
 import quantstats as qs
 import pandas as pd
 import numpy as np
-import streamlit as st
 from bokeh.plotting import figure
 from PIL import Image
 
 # set window wide
-st.set_option('wideMode', True)
 
 # set title
-st.title('Test plot with quant')
+st.title('Test WebAPP With QuantStats')
 
 @st.cache
 def load_data(data_name):
@@ -81,7 +79,6 @@ with st.expander("Plot Data"):
 
         image = Image.open(f'output_plot/{select_plot_type}-{select_crypto_name}.png')
         st.image(image, caption=f'{select_plot_type} of {select_crypto_name}.')
-
 
 with st.expander("Show Return %"):
     # load data button
