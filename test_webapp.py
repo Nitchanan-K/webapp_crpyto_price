@@ -71,7 +71,7 @@ with st.expander("Plot Data"):
                                      'rolling_sortino', 'rolling_volatility', 'snapshot', 'yearly_returns')
                                     ) #'rolling_beta',
     # plot button
-    if st.button('Plot Heatmap'):
+    if st.button('Plot Data'):
         plot_with_quant(select_crypto_name, select_plot_type)
 
         image = Image.open(f'output_plot/{select_plot_type}-{select_crypto_name}.png')
