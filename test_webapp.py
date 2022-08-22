@@ -40,20 +40,7 @@ st.title('Test WebAPP With QuantStats')
 
 
 # expander Plot Data
-with open('style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
 with st.expander("Plot Data"):
-<<<<<<< HEAD
-    # select box plot type
-    select_plot_type = st.selectbox('Select Plot Type',
-                                    ('daily_returns', 'distribution', 'drawdown', 'drawdowns_periods', 'earnings',
-                                     'histogram', 'log_returns', 'monthly_heatmap', 'returns',
-                                     'rolling_sharpe',
-                                     'rolling_sortino', 'rolling_volatility', 'snapshot', 'yearly_returns')
-                                    ) #'rolling_beta',
-    # plot button
-=======
     # select box crypto name
     import crypto_names
     select_crypto_name = st.selectbox('Select Crypto Name', crypto_names.crypto_name_tuple
@@ -67,7 +54,7 @@ with st.expander("Plot Data"):
     st.subheader(f'{select_crypto_name} - {select_plot_type}')
 
     # plot widget button
->>>>>>> 4e80fd606848b19f9c2c59527040e7f3b2ba2ff9
+
     if st.button('Plot Data'):
         plot_with_quant(select_crypto_name, select_plot_type)
 
@@ -92,8 +79,6 @@ with st.expander("Full Report"):
     # select box for crypto name
     select_crypto_name_report = st.selectbox('Select Crypto For analyze', crypto_names.crypto_name_tuple
                                       )
-
-
     # sub header
     st.subheader(f'{select_crypto_name_report}')
     # plot default report
