@@ -15,7 +15,7 @@ def load_data(data_name):
     data = qs.utils.download_returns(f'{data_name}')
     return data
 
-@st.cache
+
 def plot_with_quant(data_name,plot_name):
     data_dt = qs.utils.download_returns(f'{data_name}')
     import functions.plot_with_quant
