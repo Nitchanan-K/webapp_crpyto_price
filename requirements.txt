@@ -4,4 +4,4 @@ numpy
 bokeh
 QuantStats
 Pillow
-ta-lib
+TA-Lib == 0.4.24
