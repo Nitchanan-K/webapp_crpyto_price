@@ -9,12 +9,11 @@ from PIL import Image
 from patterns_list import candlestick_patterns
 import talib
 import csv
-
 # make dataframe
 df_main = pd.DataFrame()
-datafiles = os.listdir('dataset/daily')
+datafiles = os.listdir('./dataset/daily')
 for filesname in datafiles:
-    df = pd.read_csv(f'dataset/daily/{filesname}')
+    df = pd.read_csv(f'./dataset/daily/{filesname}')
     df.rename(columns={'Unnamed: 0': 'date'}, inplace=True)
     df_main = pd.concat([df_main,df.tail(5)])
     ee = 0

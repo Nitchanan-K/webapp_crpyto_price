@@ -9,13 +9,13 @@ from bokeh.resources import INLINE
 
 # make dataframe
 df_main = pd.DataFrame()
-datafiles = os.listdir('C:/Users/User/PycharmProjects/web_app_crypto_analyze/dataset/daily')
+datafiles = os.listdir('./dataset/daily')
 
 # test dt
 df_new = pd.DataFrame()
 
 for filesname in datafiles:
-    df = pd.read_csv(f'C:/Users/User/PycharmProjects/web_app_crypto_analyze/dataset/daily/{filesname}')
+    df = pd.read_csv(f'./dataset/daily/{filesname}')
     df.rename(columns={'Unnamed: 0': 'date'}, inplace=True)
     df_main = pd.concat([df_main,df.tail(10)])
     ee = 0
