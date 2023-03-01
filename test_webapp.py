@@ -26,7 +26,7 @@ for filesname in datafiles:
     df_main['Result'] = result
     df_main['New_col'] = df_main['ticker'] + "-" + df_main['Result'].astype(str)
     df_main.set_index('New_col', inplace=True)
-
+    
 # functions
 
 #@st.cache
@@ -44,6 +44,7 @@ def plot_with_quant(data_name,plot_name):
 def plot_full_report(data_name):
     data_dt = qs.utils.download_returns(f'{data_name}')
     import functions.create_full_report
+    print(data_dt)
     functions.create_full_report.create_report(data_name,data_dt)
 
 
@@ -103,6 +104,7 @@ with st.expander("Full Report"):
     st.subheader(f'{select_crypto_name_report}')
     # plot default report
     if st.button('Create Full Report'):
+        os.remove("quantstats-tearsheet.html")
         plot_full_report(select_crypto_name_report)
         tearsheet = open("quantstats-tearsheet.html")
         components.html(tearsheet.read(),height=1000,width=700,scrolling=True)
