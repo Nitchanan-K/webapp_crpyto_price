@@ -104,7 +104,6 @@ with st.expander("Full Report"):
     st.subheader(f'{select_crypto_name_report}')
     # plot default report
     if st.button('Create Full Report'):
-        os.remove("quantstats-tearsheet.html")
         plot_full_report(select_crypto_name_report)
         tearsheet = open("quantstats-tearsheet.html")
         components.html(tearsheet.read(),height=1000,width=700,scrolling=True)
@@ -121,7 +120,6 @@ with st.expander("Full Report"):
 
     # plot benchmark report
     if st.button('Create Benchmark Report'):
-        os.remove("quantstats-tearsheet.html")
         plot_benchmark_report(select_crypto_name_report)
         tearsheet_benchmark = open("quantstats-tearsheet.html")
         components.html(tearsheet_benchmark.read(), height=1000, width=700, scrolling=True)
