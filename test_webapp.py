@@ -45,6 +45,8 @@ def plot_full_report(data_name):
     data_dt = qs.utils.download_returns(f'{data_name}')
     import functions.create_full_report
     print(data_dt)
+    print('done print data_dt')
+    print(data_name)
     functions.create_full_report.create_report(data_name,data_dt)
 
 
