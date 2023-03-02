@@ -25,6 +25,7 @@ for filesname in datafiles:
             ee = 0
     df_main['Result'] = result
     df_main['New_col'] = df_main['ticker'] + "-" + df_main['Result'].astype(str)
+    
     df_main.set_index('New_col', inplace=True)
     
 # functions
@@ -44,6 +45,7 @@ def plot_with_quant(data_name,plot_name):
 def plot_full_report(data_name):
     data_dt = qs.utils.download_returns(f'{data_name}')
     import functions.create_full_report
+    #data_dt.index = data_dt.index.tz_convert(None)
     print(data_dt)
     print('done print data_dt')
     print(data_name)
