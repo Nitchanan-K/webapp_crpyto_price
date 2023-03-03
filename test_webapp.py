@@ -8,6 +8,9 @@ from bokeh.plotting import figure
 from PIL import Image
 from patterns_list import candlestick_patterns
 # import talib
+
+import yfinance as yf
+
 import csv
 # make dataframe
 df_main = pd.DataFrame()
@@ -43,19 +46,18 @@ def plot_with_quant(data_name,plot_name):
 
 
 def plot_full_report(data_name):
-    data_dt = qs.utils.download_returns(f'{data_name}')
+ 
     import functions.create_full_report
-    #data_dt.index = data_dt.index.tz_convert(None)
-    print(data_dt)
-    print('done print data_dt')
     print(data_name)
-    functions.create_full_report.create_report(data_name,data_dt)
+    functions.create_full_report.create_report(data_name)
+ 
 
 
-def plot_benchmark_report(data_name):
-    data_dt = qs.utils.download_returns(f'{data_name}')
+def plot_benchmark_report(data_name,benchmark_name):
+ 
     import functions.create_benchmark_report
-    functions.create_benchmark_report.create_benchmark_report(data_name,data_dt,benchmark=select_benchmark_crypto)
+    print(data_name)
+    functions.create_benchmark_report.create_benchmark_report(data_name,benchmark_name)
 
 # set title
 st.title('Test WebAPP With QuantStats')
@@ -124,7 +126,7 @@ with st.expander("Full Report"):
 
     # plot benchmark report
     if st.button('Create Benchmark Report'):
-        plot_benchmark_report(select_crypto_name_report)
+        plot_benchmark_report(select_crypto_name_report,select_benchmark_crypto)
         tearsheet_benchmark = open("quantstats-tearsheet.html")
         components.html(tearsheet_benchmark.read(), height=1000, width=700, scrolling=True)
 

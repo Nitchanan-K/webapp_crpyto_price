@@ -1,8 +1,19 @@
 import quantstats as qs
+import streamlit as st
+import streamlit.components.v1 as components
+import os
+import quantstats as qs
+import pandas as pd
+import numpy as np
+from bokeh.plotting import figure
+from PIL import Image
+from patterns_list import candlestick_patterns
 
-def create_report(dataname,date_dt):
-    #qs.reports.full(date_dt)
-    #qs.reports.html(date_dt,dataname,title=f'{dataname}Report Investments', output='output/BTC_report.html', mode='full')
-    """, title=f'{dataname} Report Investments', output='output/BTC_report.html', mode='full'"""
-    """using qs.reports.html"""
-    qs.reports.plots(date_dt, mode='full')
+def create_report(dataname):
+  
+    stock = qs.utils.download_returns(dataname)
+    stock.index = stock.index.tz_convert(None)
+
+
+    qs.reports.html(stock, mode='full',output='output/test12_report.html',title=f"{dataname}")
+    
