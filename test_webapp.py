@@ -8,9 +8,6 @@ from bokeh.plotting import figure
 from PIL import Image
 from patterns_list import candlestick_patterns
 # import talib
-
-import yfinance as yf
-
 import csv
 # make dataframe
 df_main = pd.DataFrame()
@@ -46,7 +43,6 @@ def plot_with_quant(data_name,plot_name):
 
 
 def plot_full_report(data_name):
- 
     import functions.create_full_report
     print(data_name)
     functions.create_full_report.create_report(data_name)
@@ -54,17 +50,16 @@ def plot_full_report(data_name):
 
 
 def plot_benchmark_report(data_name,benchmark_name):
- 
     import functions.create_benchmark_report
     print(data_name)
     functions.create_benchmark_report.create_benchmark_report(data_name,benchmark_name)
+
 
 # set title
 st.title('Test WebAPP With QuantStats')
 
 # Dict
 crypto_dict = {}
-
 
 # expander Plot Data
 with st.expander("Plot Data"):

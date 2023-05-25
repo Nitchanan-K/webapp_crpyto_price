@@ -14,6 +14,5 @@ def create_report(dataname):
     stock = qs.utils.download_returns(dataname)
     stock.index = stock.index.tz_convert(None)
 
-
     qs.reports.html(stock, mode='full',output='output/test12_report.html',title=f"{dataname}")
     
