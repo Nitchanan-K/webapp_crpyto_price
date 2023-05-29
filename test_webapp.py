@@ -42,17 +42,17 @@ def plot_with_quant(data_name,plot_name):
     functions.plot_with_quant.plot_data(data_name,plot_name,data_dt)
 
 
-def plot_full_report(data_name):
-    import functions.create_full_report
-    print(data_name)
-    functions.create_full_report.create_report(data_name)
+# def plot_full_report(data_name):
+#     import functions.create_full_report
+#     print(data_name)
+#     functions.create_full_report.create_report(data_name)
  
 
 
-def plot_benchmark_report(data_name,benchmark_name):
-    import functions.create_benchmark_report
-    print(data_name)
-    functions.create_benchmark_report.create_benchmark_report(data_name,benchmark_name)
+# def plot_benchmark_report(data_name,benchmark_name):
+#     import functions.create_benchmark_report
+#     print(data_name)
+#     functions.create_benchmark_report.create_benchmark_report(data_name,benchmark_name)
 
 
 # set title
